@@ -3,11 +3,11 @@
 #include <cmath>
 #include <math.h>
 
-void Rectangle::setXr(float x) {
+void Parcours3D::setXr(float x) {
     this->xr = x;
 }
 
-void Rectangle::setYr(float y) {
+void Parcours3D::setYr(float y) {
     this->yr = y;
 }
 
@@ -21,19 +21,19 @@ void Rectangle::setL(float Long) {
 }
 */
 
-float Rectangle::getXr() {
+float Parcours3D::getXr() {
     return xr;
 }
 
-float Rectangle::getYr() {
+float Parcours3D::getYr() {
     return yr;
 }
 
-float Rectangle::getL(float xr,float x) {
+float Parcours3D::getL(float xr,float x) {
     return fabs(xr - x);
 }
 
-float Rectangle::getl(float yr,float y) {
+float Parcours3D::getl(float yr,float y) {
     return fabs(yr - y);
 }
 

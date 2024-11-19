@@ -1,24 +1,27 @@
-
 #include <cmath>
 #include "Point3D.h"
+
+
+float Point3D::get_x() {
+    return x;
+}
+
+float Point3D::get_y() {
+    return y;
+}
 
 float Point3D::get_z() {
     return z;
 }
 
-/*
-float Point3D::getR(){
-    return R;
+void Point3D::set_x(float x) {
+    this->x = x;
 }
 
-void Point3D::setR(float R){
-    this->R = R;
+void Point3D::set_y(float y) {
+    this->y = y;
 }
 
-float Point3D::getArea(float Rayon) {
-    return M_PI*(Rayon*Rayon);
+void Point3D::set_z(float y) {
+    this->y = y;
 }
-
-float Point3D::getPerime(float Rayon) {
-    return 2*M_PI*(Rayon);
-}*/

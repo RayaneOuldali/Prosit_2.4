@@ -1,19 +1,23 @@
 #ifndef POINT3D_H
 #define POINT3D_H
 
-#include "Point.h"
+# include "Point.h"
 
-class Point3D : public Point {     //heritage des point x,y
-private:
-    float R;
+class Point3D : public CLPoint{     //heritage des point x,y
+protected:
+    float x;
+    float y;
+    float z;
 public:
-    Point3D(): R(0) {}// constructeur
-    float getR();
-    void setR(float Rayon);
+    Point3D(): x(0),y(0),z(0) {} //constructeur
 
-    float getArea(float Rayon);
-    float getPerime(float Rayon);
+    float get_x() override ;
+    float get_y() override ;
+    float get_z() override ;
 
+    void set_x(float x) override ;
+    void set_y(float y) override ;
+    void set_z(float y) override ;
 };
 
 
