@@ -1,3 +1,5 @@
+//main contenant le code principal et les appels de fonctions.
+
 void main(void) {
     int pause;
 
