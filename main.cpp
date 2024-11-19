@@ -1,6 +1,13 @@
-//main contenant le code principal et les appels de fonctions.
+#include <iostream>
 
-void main(void) {
+# include "Point.h"
+# include "Parcours.h"
+# include "Point3D.h"
+# include "Parcours3D.h"
+
+using namespace std;
+
+int main() {
     int pause;
 
     CLpoint* p1;
@@ -11,7 +18,7 @@ void main(void) {
     p1 = new CLpoint(0.0, 0.0);
     p2 = new CLpoint(1.0, 1.0);
     p3 = new CLpoint(2.0, 2.0);
-    parcours = new CLparcours2D(3);
+    parcours = new CLparcours(3);
 
     parcours->ajouterPoint(p1);
     parcours->ajouterPoint(p2);
