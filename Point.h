@@ -1,23 +1,24 @@
-
 #ifndef POINT_H
 #define POINT_H
-//#include <set>
 
+#include <iostream>
+#include <cmath>
 
-    class CLPoint {
-    protected:
-        float x;
-        float y;
-    public:
-        CLPoint(): x(0),y(0) {} //constructeur
+class CLpoint {
+protected:
+    double x;
+    double y;
 
-        virtual float get_x();
-        virtual float get_y();
+public:
+    CLpoint(double x = 0.0, double y = 0.0);
+    virtual ~CLpoint() = default;
 
-        virtual void set_x(float x);
-        virtual void set_y(float y);
-    };
+    virtual double calculDistance(const CLpoint& autre) const;
+    virtual void afficherCoordo() const;
 
+    // Accesseurs
+    double getX() const;
+    double getY() const;
+};
 
-
-#endif //POINT_H
+#endif // POINT_H

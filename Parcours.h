@@ -1,22 +1,23 @@
 #ifndef PARCOURS_H
 #define PARCOURS_H
-#include <set>
 
+#include <vector>
+#include "Point.h"
 
-    class Parcours {
-    protected:
-        float x;
-        float y;
-    public:
-        Parcours(): x(0),y(0) {}//constructeur
+class CLparcours {
+protected:
+    std::vector<CLpoint*> points;
 
-        float get_x();
-        float get_y();
+public:
+    explicit CLparcours(int capacite = 10);
+    virtual ~CLparcours();
 
-        void set_x(float x);
-        void set_y(float y);
-    };
+    void ajouterPoint(CLpoint* point);
+    virtual double calculDistance() const;
+    virtual void message() const;
 
+    // Accesseur
+    size_t getNombrePoints() const;
+};
 
-
-#endif //FORMEGEO_H
+#endif // PARCOURS_H

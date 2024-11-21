@@ -1,20 +1,31 @@
 #include "Parcours.h"
 
-
-
-float Parcours::get_x() {
-    return x;
+CLparcours::CLparcours(int capacite) {
+    points.reserve(capacite);
 }
 
-
-float Parcours::get_y() {
-    return y;
+CLparcours::~CLparcours() {
+    for (auto point : points) {
+        delete point;
+    }
 }
 
-void Parcours::set_x(float x) {
-    this->x = x;
+void CLparcours::ajouterPoint(CLpoint* point) {
+    points.push_back(point);
 }
 
-void Parcours::set_y(float y) {
-    this->y = y;
+double CLparcours::calculDistance() const {
+    double distanceTotale = 0.0;
+    for (size_t i = 1; i < points.size(); ++i) {
+        distanceTotale += points[i - 1]->calculDistance(*points[i]);
+    }
+    return distanceTotale;
+}
+
+void CLparcours::message() const {
+    std::cout << "CLparcours: " << points.size() << " points." << std::endl;
+}
+
+size_t CLparcours::getNombrePoints() const {
+    return points.size();
 }

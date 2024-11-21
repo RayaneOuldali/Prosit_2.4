@@ -1,25 +1,21 @@
 #ifndef POINT3D_H
 #define POINT3D_H
 
-# include "Point.h"
+#include "Point.h"
 
-class Point3D : public CLPoint{     //heritage des point x,y
+class CLpoint3D : public CLpoint {
 protected:
-    float x;
-    float y;
-    float z;
+    double z;
+
 public:
-    Point3D(): x(0),y(0),z(0) {} //constructeur
+    CLpoint3D(double x = 0.0, double y = 0.0, double z = 0.0);
+    ~CLpoint3D() override = default;
 
-    float get_x() override ;
-    float get_y() override ;
-    float get_z() override ;
+    double calculDistance(const CLpoint& autre) const override;
+    void afficherCoordo() const override;
 
-    void set_x(float x) override ;
-    void set_y(float y) override ;
-    void set_z(float y) override ;
+    // Accesseur
+    double getZ() const;
 };
 
-
-
-#endif //POINT3D_H
+#endif // POINT3D_H
